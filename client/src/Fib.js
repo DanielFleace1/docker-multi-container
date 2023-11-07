@@ -15,7 +15,6 @@ class Fib extends Component {
 
   async fetchValues() {
     const values = await axios.get("/api/values/current");
-    console.log("fethc values", values);
     this.setState({ values: values.data });
   }
 
@@ -42,7 +41,6 @@ class Fib extends Component {
   renderValues() {
     const entries = [];
 
-    console.log("render values", this.state.values);
     for (let key in this.state.values) {
       entries.push(
         <div key={key}>
